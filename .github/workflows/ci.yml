@@ -23,10 +23,7 @@ jobs:
       with:
         lazarus-version: "2.2.2"
         with-cache: true
-      run: lazbuild -B "Cheat Engine/cheatengine.lpi"
-      run: lazbuild -B "Cheat Engine/speedhack/speedhack.lpr"
-      run: lazbuild -B "Cheat Engine/luaclient/luaclient.lpr"
-      run: lazbuild -B "Cheat Engine/VEHDebug/vehdebug.lpr"
+      run: lazbuild -B "Cheat Engine/cheatengine.lpi" && lazbuild -B "Cheat Engine/speedhack/speedhack.lpr" && lazbuild -B "Cheat Engine/luaclient/luaclient.lpr" && lazbuild -B "Cheat Engine/VEHDebug/vehdebug.lpr"
 
     - name : Upload Artifact
       uses: actions/upload-artifact@master
