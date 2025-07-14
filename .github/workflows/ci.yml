@@ -20,7 +20,6 @@ jobs:
 
     steps:
     - name: Build
-      uses: actions/checkout@v4
       uses: gcarreno/setup-lazarus@v3
       with:
         lazarus-version: "2.2.2"
