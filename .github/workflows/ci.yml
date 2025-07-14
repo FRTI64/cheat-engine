@@ -18,11 +18,13 @@ jobs:
         ref: master
         fetch-depth: 1
 
-    - name: Build
+    - name: Setup
       uses: gcarreno/setup-lazarus@v3
       with:
         lazarus-version: "2.2.2"
         with-cache: true
+
+    - name: Build
       run: lazbuild -B "Cheat Engine/cheatengine.lpi" && lazbuild -B "Cheat Engine/speedhack/speedhack.lpr" && lazbuild -B "Cheat Engine/luaclient/luaclient.lpr" && lazbuild -B "Cheat Engine/VEHDebug/vehdebug.lpr"
 
     - name : Upload Artifact
