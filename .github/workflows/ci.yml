@@ -19,15 +19,16 @@ jobs:
         fetch-depth: 1
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: gcarreno/setup-lazarus@v3
-        with:
-          lazarus-version: "2.2.2"
-          with-cache: true
-      - run: lazbuild -B "Cheat Engine/cheatengine.lpi"
-      - run: lazbuild -B "Cheat Engine/speedhack/speedhack.lpr"
-      - run: lazbuild -B "Cheat Engine/luaclient/luaclient.lpr"
-      - run: lazbuild -B "Cheat Engine/VEHDebug/vehdebug.lpr"
+    - name: Build
+      uses: actions/checkout@v4
+      uses: gcarreno/setup-lazarus@v3
+      with:
+        lazarus-version: "2.2.2"
+        with-cache: true
+      run: lazbuild -B "Cheat Engine/cheatengine.lpi"
+      run: lazbuild -B "Cheat Engine/speedhack/speedhack.lpr"
+      run: lazbuild -B "Cheat Engine/luaclient/luaclient.lpr"
+      run: lazbuild -B "Cheat Engine/VEHDebug/vehdebug.lpr"
     
     steps:
     - name : Upload artifact
